@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="api.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" id="listaProdutos"></div>
+    <div id="produtos"></div>
+
+
+    <script>
+        async function carregar() {
+            try {
+                const resposta = await fetch('https://dummyjson.com/products');
+                const data = await resposta.json();
+                const lista = data.products; // garante que é um array
+
+
+                const container = document.getElementById('produtos');
+                container.innerHTML = '';
+
+
+                lista.forEach(prod => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+
+
+                    card.innerHTML = `
+                    <img src="${prod.thumbnail}" alt="${prod.title}">
+                    <h2>${prod.title}</h2>
+                    <p><strong>Categoria:</strong> ${prod.category}</p>
+                    <p><strong>Marca:</strong> ${prod.brand}</p>
+                    <p class="preco">R$ ${prod.price}</p>
+                    `;
+
+                    container.appendChild(card);
+                });
+            } catch (erro) {
+                console.error('Erro ao carregar os produtos:', erro);
+            }
+        }
+
+
+        carregar();
+    </script>
+
+
+</body>
+
+</html>
