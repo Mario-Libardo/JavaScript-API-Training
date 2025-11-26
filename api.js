@@ -1,14 +1,15 @@
 // Buscando a API:
 
-const URL = await fetch('https://dummyjson.com/products');
-
-//fetch() → função usada para buscar dados de um servidor/API.
-//'https://dummyjson.com/products' → URL da API.
-//await → espera a resposta chegar(assíncrona).
-//URL → guarda o retorno da API(não é o JSON ainda).
-
 async function chamarApi() {
+    
     try {
+        const URL = await fetch('https://dummyjson.com/products');
+        
+        //fetch() → função usada para buscar dados de um servidor/API.
+        //'https://dummyjson.com/products' → URL da API.
+        //await → espera a resposta chegar(assíncrona).
+        //URL → guarda o retorno da API(não é o JSON ainda).
+        
         // Mostra o status da API
         console.log(URL);
 
