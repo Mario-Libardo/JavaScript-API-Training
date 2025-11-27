@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff0000, #eeff00, #00bd19, #011f80, #55009b, #bd0000);
+    background: linear-gradient(135deg, #F3E5F5, #E1BEE7, #EDE7F6, #9ac1ff);
     margin: 0;
     padding: 20px;
     color: #fff;
@@ -75,6 +75,7 @@ h1 {
 }
 
 #titulo {
+    color: cornflowerblue;
     text-align: center;
     font-size: 50px;
 }
@@ -87,14 +88,14 @@ h1 {
         font-size: 20px;
         list-style: none;
 
-        li{
+        li {
             transition: 1s;
-            
+
             &:hover {
-    
+
                 transform: translateY(-2px);
                 box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
-    
+
             }
         }
 
